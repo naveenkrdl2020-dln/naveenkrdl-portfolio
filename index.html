@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naveenkumar Durga Lakshmi · Senior AI Marketing & Management Consultant · VP of Marketing</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231B3A6B'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='32' font-weight='500' fill='%23FFFFFF'%3EN%3C/text%3E%3Ccircle cx='46' cy='20' r='4' fill='%23FBBF24'/%3E%3C/svg%3E" />
   <meta name="description" content="Senior AI Marketing & Management Consultant with 19 years building revenue-aligned demand generation, ABM, and AI-powered GTM systems for US enterprise and SMB markets. Open to VP of Marketing, Head of Demand Generation, and CMO roles, full-time or fractional." />
   <meta name="keywords" content="AI Marketing Consultant, Management Consultant, VP of Marketing, Head of Demand Generation, CMO, fractional consulting, B2B marketing, ABM, demand generation, AI marketing, GTM strategy, cybersecurity marketing, SaaS marketing, Bangalore, remote" />
   <meta name="author" content="Naveenkumar Durga Lakshmi" />
@@ -62,23 +63,28 @@
     /* NAV */
     nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); }
     .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-brand { font-weight: 700; font-size: 15px; color: var(--navy); letter-spacing: -0.3px; text-decoration: none; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: var(--navy); letter-spacing: -0.3px; text-decoration: none; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--blue); }
     .nav-cta { background: var(--blue) !important; color: var(--white) !important; padding: 7px 16px !important; border-radius: 6px !important; font-weight: 600 !important; }
     .nav-cta:hover { background: var(--navy) !important; }
+    .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 32px; height: 32px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 2px; background: var(--navy); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* HERO */
-    .hero-wrap { max-width: 1120px; margin: 0 auto; padding: 88px 24px 72px; }
+    .hero-wrap { max-width: 1120px; margin: 0 auto; padding: 88px 24px 72px; text-align: center; }
     .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; }
     .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(40px, 6vw, 68px); color: var(--navy); line-height: 1.1; letter-spacing: -1px; margin-bottom: 12px; }
-    .hero-title { font-size: clamp(16px, 2.5vw, 20px); font-weight: 400; color: var(--muted); margin-bottom: 28px; max-width: 640px; }
+    .hero-title { font-size: clamp(16px, 2.5vw, 20px); font-weight: 400; color: var(--muted); margin: 0 auto 28px; max-width: 640px; }
     .hero-title span { color: var(--body); font-weight: 500; }
-    .hero-summary { font-size: 16px; color: var(--muted); max-width: 580px; line-height: 1.75; margin-bottom: 36px; }
+    .hero-summary { font-size: 16px; color: var(--muted); max-width: 580px; line-height: 1.75; margin: 0 auto 36px; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-light); border: 1px solid var(--blue-mid); color: var(--blue); font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 20px; margin-bottom: 24px; }
     .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .btn-primary { background: var(--blue); color: var(--white); padding: 12px 24px; border-radius: 7px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; display: inline-block; }
     .btn-primary:hover { background: var(--navy); }
     .btn-secondary { background: transparent; color: var(--navy); padding: 12px 24px; border-radius: 7px; font-size: 14px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--border); transition: border-color 0.2s, color 0.2s; display: inline-block; }
@@ -197,7 +203,13 @@
       .about-grid, .skills-grid, .cases-grid { grid-template-columns: 1fr; }
       .certs-grid { grid-template-columns: 1fr 1fr; }
       .timeline-item { grid-template-columns: 1fr; gap: 6px; }
-      .nav-links { display: none; }
+      .nav-links { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--white); flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 14px 24px; border-bottom: 1px solid var(--border); }
+      .nav-links li:last-child a { border-bottom: none; }
+      .nav-cta { margin: 12px 24px; text-align: center; }
+      .nav-toggle { display: flex; }
     }
     @media (max-width: 480px) { .certs-grid { grid-template-columns: 1fr; } }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
@@ -207,8 +219,18 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#hero">Naveenkumar DL</a>
-    <ul class="nav-links">
+    <a class="nav-brand" href="#hero" aria-label="Naveenkumar Durga Lakshmi, home">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#1B3A6B"/>
+        <g transform="translate(18,18)">
+          <path d="M -8.1 6.3 L -8.1 -6.3 L -2.7 -6.3 L 4.5 4.5 L 4.5 -6.3 L 8.1 -6.3 L 8.1 6.3 L 2.7 6.3 L -4.5 -4.5 L -4.5 6.3 Z" fill="#FFFFFF"/>
+          <path d="M -8.6 9.3 L -2.2 2.2 L 1.4 5 L 7.9 -3.6" stroke="#FBBF24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 4.3 -5.8 L 7.9 -3.6 L 6.8 0.4" stroke="#FBBF24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <span>Naveenkumar DL</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#work">Work</a></li>
@@ -216,6 +238,9 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -692,6 +717,23 @@
 <footer>
   <p>© 2026 Naveenkumar Durga Lakshmi · Bangalore, India · naveenkrdl2020@gmail.com</p>
 </footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
 
 </body>
 </html>
