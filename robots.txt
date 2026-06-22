@@ -1,35 +1,6 @@
-# robots.txt for naveenkrdl.in
-# Allow all crawlers, including AI/LLM crawlers, full access
-
 User-agent: *
 Allow: /
-
-# Explicitly allow known AI/LLM crawlers for citation and discoverability
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
 Sitemap: https://naveenkrdl.in/sitemap.xml
+
+# /collaborate is intentionally indexable — partner discovery via search
+# If you ever want to hide it from Google, add: Disallow: /collaborate
