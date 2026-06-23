@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://naveenkrdl.in/sitemap.xml
-
-# /collaborate is intentionally indexable — partner discovery via search
-# If you ever want to hide it from Google, add: Disallow: /collaborate
